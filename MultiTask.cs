@@ -57,5 +57,17 @@ namespace MultiTask
                     writeRedText(ErrorMessage);
             }
         }
+
+        public static void enterYear(String Message, out int year, String ErrorMessage = "Неверный формат записи имени")
+        {
+            while (true)
+            {
+                enterNumber(Message, out year);
+                if (year > DateTime.Now.Year)
+                    Instruments.writeRedText(ErrorMessage);
+                else
+                    break;
+            }
+        }
     }
 }   
