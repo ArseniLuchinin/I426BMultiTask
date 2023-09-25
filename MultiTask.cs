@@ -28,11 +28,13 @@ namespace MultiTask
             }
         }
 
-        public static void enterName(String Message,out String name, String ErrorMessage = "Неверный формат записи имени") {
+        public static void enterName(String Message, out String name, String ErrorMessage = "Неверный формат записи имени")
+        {
             while (true)
-            {   
+            {
+
                 Console.WriteLine(Message);
-                name = Console.ReadLine();
+                name = "" + Console.ReadLine();
                 String pattern = "^[А-ЯЁA-Z][а-яёa-z]{" + (name.Length - 1) + "}";
                 Regex regex = new Regex(pattern);
                 if (regex.IsMatch(name))
@@ -47,7 +49,7 @@ namespace MultiTask
             while (true)
             {
                 Console.WriteLine(Message);
-                word = Console.ReadLine();
+                word = "" + Console.ReadLine();
                 Regex regex = new Regex(@"\w*", RegexOptions.IgnoreCase);
                 if (regex.IsMatch(word))
                     break;
