@@ -10,10 +10,9 @@ namespace MultiTask
 {
     static class Instruments
     {
-        public static void writeRedText(String outputString)
-        {
+        public static void writeRedText(String outputString, ConsoleColor messageColor = ConsoleColor.Red) {
             ConsoleColor fontColor = Console.ForegroundColor;
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = messageColor;
             Console.WriteLine(outputString);
             Console.ForegroundColor = fontColor;
         }
