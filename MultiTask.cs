@@ -69,5 +69,21 @@ namespace MultiTask
                     break;
             }
         }
+
+        public static void enterJSONFileName(String Message, out String filename, String ErrorMessage = "Неверный формат записи")
+        {
+            const String DOT_JSON = ".json";
+            while (true)
+            {
+                Console.WriteLine(Message);
+                filename = "" + Console.ReadLine();
+                String pattern = "[A-Za-z_]{" + (filename.Length - DOT_JSON.Length) + "}" + DOT_JSON;
+                Regex regex = new Regex(pattern);
+                if (regex.IsMatch(filename))
+                    break;
+                else
+                    writeRedText(ErrorMessage);
+            }
+        }
     }
 }   
